@@ -1,4 +1,9 @@
-import './globals.css'
+"use client";
+
+import "./globals.css";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +13,11 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className="  bg-[rgb(36,36,36)]">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }

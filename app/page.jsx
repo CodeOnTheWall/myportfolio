@@ -1,91 +1,118 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+// [slug] dynamic route (id or username etc)
+// (group) ignored by routing system
 
-const inter = Inter({ subsets: ['latin'] })
+import { previewData } from "next/headers";
+import { groq } from "next-sanity";
+import { client } from "../lib/sanity.client";
 
-export default function Home() {
+const pageInfoQuery = groq`
+*[_type == "pageInfo"]{
+  name,
+  role,
+  heroImage,
+  backgroundInformation,
+  profilePic,
+  phoneNumber,
+  email,
+  address,
+  socials[]->
+}`;
+const skillsQuery = groq`
+*[_type == "skill"]{
+ ...,
+}`;
+const experienceQuery = groq`
+*[_type == "experience"]{
+  jobTitle,
+  companyImage,
+  company,
+  dateStarted,
+  dateEnded,
+  isCurrentlyWorkingHere,
+  technologies[]->,
+  points
+}`;
+const projectQuery = groq`
+*[_type == "project"]{
+  title, 
+  image,
+  summary, 
+  technologies[]->, 
+  linkToBuild 
+}`;
+
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import WorkExperience from "@/components/WorkExperience";
+import PracticeProjects from "@/components/PracticeProjects";
+import Skills from "@/components/Skills";
+import ContactMe from "@/components/ContactMe";
+import PreviewSuspense from "@/components/PreviewSuspense";
+
+export default async function Home() {
+  const pageInfo = await client.fetch(pageInfoQuery);
+  const pageInfoo = pageInfo[0];
+
+  const experiences = await client.fetch(experienceQuery);
+  // const freelancee = freelance[0];
+
+  const skills = await client.fetch(skillsQuery);
+
+  const projects = await client.fetch(projectQuery);
+
+  if (previewData()) {
+    return (
+      <PreviewSuspense
+        fallback={
+          <div role="status">
+            <p className=" text-center text-lg animate-pulse text-white">
+              Loading Preview Data...
+            </p>
+          </div>
+        }
+      >
+        <div>Preview Mode</div>;
+      </PreviewSuspense>
+    );
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.jsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div
+      className=" text-white h-screen snap-y snap-mandatory overflow-y-scroll
+       overflow-x-hidden z-40 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50"
+    >
+      {/* Header in Layout */}
+      {/* Header */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      {/* Hero */}
+      <section id="hero" className="snap-start">
+        <Hero pageInfoo={pageInfoo} />
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* About*/}
+      <section id="about" className="snap-center">
+        <About pageInfoo={pageInfoo} />
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      {/* Work Experience */}
+      <section id="freelance" className="snap-center">
+        <WorkExperience experiences={experiences} />
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      {/* Practice Projects */}
+      <section id="projects" className="snap-start">
+        <PracticeProjects projects={projects} />
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="snap-start">
+        <Skills skills={skills} />
+      </section>
+
+      {/* Contact Me */}
+      <section id="contact" className="snap-center">
+        <ContactMe />
+      </section>
+    </div>
+  );
 }
