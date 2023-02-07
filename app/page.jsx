@@ -23,22 +23,13 @@ const skillsQuery = groq`
 }`;
 const experienceQuery = groq`
 *[_type == "experience"]{
-  jobTitle,
-  companyImage,
-  company,
-  dateStarted,
-  dateEnded,
-  isCurrentlyWorkingHere,
-  technologies[]->,
-  points
+ ...,
+ technologies[]->
 }`;
 const projectQuery = groq`
 *[_type == "project"]{
-  title, 
-  image,
-  summary, 
+ ...,
   technologies[]->, 
-  linkToBuild 
 }`;
 
 import Hero from "@/components/Hero";

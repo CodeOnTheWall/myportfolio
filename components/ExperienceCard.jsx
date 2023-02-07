@@ -43,9 +43,10 @@ export default function ExperienceCard({ experience }) {
             : new Date(experience.dateEnded).toDateString()}
         </p>
 
+        {/* using index here as sanity didnt give point an id */}
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          {experience.points.map((point) => (
-            <li key={point._id}>{point}</li>
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
           ))}
         </ul>
       </div>

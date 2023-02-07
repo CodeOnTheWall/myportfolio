@@ -60,7 +60,7 @@ function Header() {
           href="#contact"
           className=" uppercase hidden md:inline-flex text-sm text-gray-400 animate-bounce"
         >
-          Let's Talk
+          Let&apos;s Talk
         </a>
       </motion.div>
     </header>
