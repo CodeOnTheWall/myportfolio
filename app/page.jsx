@@ -5,6 +5,8 @@ import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import { client } from "../lib/sanity.client";
 
+export const revalidate = 30; // revalidate this page every 60 seconds
+
 const pageInfoQuery = groq`
 *[_type == "pageInfo"]{
   name,
@@ -41,7 +43,9 @@ import ContactMe from "@/components/ContactMe";
 import PreviewSuspense from "@/components/PreviewSuspense";
 
 export default async function Home() {
-  const pageInfo = await client.fetch(pageInfoQuery);
+  const pageInfo = await client.fetch(pageInfoQuery, {
+    next: { revalidate: 10 },
+  });
   const pageInfoo = pageInfo[0];
 
   const experiences = await client.fetch(experienceQuery);
