@@ -23,6 +23,7 @@ export default function About({ pageInfoo }) {
         >
           About
         </motion.h3>
+
         <motion.h3
           initial={{
             y: 25,
@@ -40,6 +41,7 @@ export default function About({ pageInfoo }) {
         >
           Me
         </motion.h3>
+
         <motion.div
           initial={{
             opacity: 0,

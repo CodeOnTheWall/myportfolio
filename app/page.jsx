@@ -49,27 +49,10 @@ export default async function Home() {
   const pageInfoo = pageInfo[0];
 
   const experiences = await client.fetch(experienceQuery);
-  // const freelancee = freelance[0];
 
   const skills = await client.fetch(skillsQuery);
 
   const projects = await client.fetch(projectQuery);
-
-  if (previewData()) {
-    return (
-      <PreviewSuspense
-        fallback={
-          <div role="status">
-            <p className=" text-center text-lg animate-pulse text-white">
-              Loading Preview Data...
-            </p>
-          </div>
-        }
-      >
-        <div>Preview Mode</div>;
-      </PreviewSuspense>
-    );
-  }
 
   return (
     <div

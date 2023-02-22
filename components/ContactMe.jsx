@@ -1,7 +1,7 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import { useForm } from "react-hook-form";
+import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
 export default function ContactMe() {
