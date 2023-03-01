@@ -22,7 +22,7 @@ export default function PracticeProjects({ projects }) {
           transition={{
             duration: 1.2,
           }}
-          className="uppercase tracking-[20px] text-gray-500 text-2xl"
+          className="uppercase tracking-[20px] text-[#8ecae6] text-2xl"
         >
           Practice
         </motion.h3>
@@ -38,7 +38,7 @@ export default function PracticeProjects({ projects }) {
           transition={{
             duration: 1.2,
           }}
-          className=" ml-3 uppercase tracking-[20px] text-gray-500 text-2xl"
+          className=" ml-3 uppercase tracking-[20px] text-[#8ecae6] text-2xl"
           //
         >
           Projects
@@ -57,7 +57,7 @@ export default function PracticeProjects({ projects }) {
           transition={{
             duration: 1.2,
           }}
-          className=" absolute right-[560px] w-[2px] h-[32px] bg-white"
+          className=" absolute right-[560px] w-[2px] h-[32px] bg-[#1d3557]"
         />
         <motion.div
           initial={{
@@ -73,7 +73,7 @@ export default function PracticeProjects({ projects }) {
           transition={{
             duration: 1.2,
           }}
-          className=" absolute right-0 w-[2px] h-[32px] bg-white"
+          className=" absolute right-0 w-[2px] h-[32px] bg-[#1d3557]"
         />
       </div>
 

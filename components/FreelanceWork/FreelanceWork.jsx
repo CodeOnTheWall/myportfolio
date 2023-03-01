@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ExperienceCard from "./ExperienceCard";
+import FreelanceWorkCard from "./FreelanceWorkCard";
 
-export default function WorkExperience({ experiences }) {
+export default function FreelanceWork({ freelances }) {
   return (
     <div
       className=" h-screen relative flex flex-col overflow-hidden text-left mx-auto 
@@ -22,7 +22,7 @@ export default function WorkExperience({ experiences }) {
           transition={{
             duration: 1.2,
           }}
-          className="uppercase tracking-[20px] text-gray-500 text-2xl"
+          className="uppercase tracking-[20px] text-[#8ecae6] text-2xl"
         >
           Freelance
         </motion.h3>
@@ -38,7 +38,7 @@ export default function WorkExperience({ experiences }) {
           transition={{
             duration: 1.2,
           }}
-          className=" ml-3 uppercase tracking-[20px] text-gray-500 text-2xl"
+          className=" ml-3 uppercase tracking-[20px] text-[#8ecae6] text-2xl"
           //
         >
           Work
@@ -57,7 +57,7 @@ export default function WorkExperience({ experiences }) {
           transition={{
             duration: 1.2,
           }}
-          className=" absolute right-[480px] w-[2px] h-[32px] bg-white"
+          className=" absolute right-[480px] w-[2px] h-[32px] bg-[#1d3557]"
         />
         <motion.div
           initial={{
@@ -73,7 +73,7 @@ export default function WorkExperience({ experiences }) {
           transition={{
             duration: 1.2,
           }}
-          className=" absolute right-0 w-[2px] h-[32px] bg-white"
+          className=" absolute right-0 w-[2px] h-[32px] bg-[#1d3557]"
         />
       </div>
 
@@ -81,8 +81,8 @@ export default function WorkExperience({ experiences }) {
         className=" w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
        scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50"
       >
-        {experiences?.map((experience) => (
-          <ExperienceCard key={experience._id} experience={experience} />
+        {freelances?.map((freelance) => (
+          <FreelanceWorkCard key={freelance._id} freelance={freelance} />
         ))}
       </div>
     </div>

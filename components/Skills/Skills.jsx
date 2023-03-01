@@ -22,7 +22,7 @@ export default function Skills({ skills }) {
           transition={{
             duration: 1.2,
           }}
-          className=" ml-3 uppercase ] text-gray-500 text-2xl"
+          className=" ml-3 uppercase ] text-[#8ecae6] text-2xl"
           //
         >
           S
@@ -40,7 +40,7 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 0.25,
           }}
-          className=" ml-3 uppercase  text-gray-500 text-2xl"
+          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
           //
         >
           K
@@ -58,7 +58,7 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 0.5,
           }}
-          className=" ml-3 uppercase  text-gray-500 text-2xl"
+          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
           //
         >
           I
@@ -77,7 +77,7 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 0.75,
           }}
-          className=" ml-3 uppercase  text-gray-500 text-2xl"
+          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
           //
         >
           L
@@ -95,7 +95,7 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 1,
           }}
-          className=" ml-3 uppercase  text-gray-500 text-2xl"
+          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
           //
         >
           L
@@ -113,11 +113,13 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 1.25,
           }}
-          className=" ml-3 uppercase  text-gray-500 text-2xl"
+          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
           //
         >
           S
         </motion.h3>
+
+        {/* coding effect */}
         <motion.div
           initial={{
             opacity: 0,
@@ -131,7 +133,7 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 1.35,
           }}
-          className=" right-[145px] uppercase absolute  text-gray-500 text-2xl"
+          className=" right-[145px] uppercase absolute  text-[#1d3557] text-2xl"
           //
         >
           &lt;
@@ -149,14 +151,14 @@ export default function Skills({ skills }) {
             duration: 1.2,
             delay: 1.35,
           }}
-          className=" left-[155px] uppercase absolute  text-gray-500 text-2xl"
+          className=" left-[155px] uppercase absolute  text-[#1d3557] text-2xl"
           //
         >
           /&gt;
         </motion.div>
       </div>
 
-      <h3 className=" absolute top-[130px] uppercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className=" absolute top-[130px] uppercase tracking-[3px] text-[#8ecae6] text-sm">
         Current Tech Stack Proficiencies
       </h3>
 
