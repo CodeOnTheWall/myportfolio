@@ -20,16 +20,18 @@ export default function FreelanceWork({ freelances }) {
           delay={1.25}
           useAnimate={false}
           className="-left-[30px] uppercase absolute  text-[#1d3557] text-2xl"
-          children="&lt;"
-        />
+        >
+          &lt;
+        </MotionDiv>
         <MotionDiv
           x={25}
           duration={1.2}
           delay={1.25}
           useAnimate={false}
           className="-right-[25px] uppercase absolute  text-[#1d3557] text-2xl"
-          children="/&gt;"
-        />
+        >
+          /&gt;
+        </MotionDiv>
       </div>
 
       <div

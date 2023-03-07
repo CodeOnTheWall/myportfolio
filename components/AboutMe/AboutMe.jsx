@@ -16,16 +16,18 @@ export default function AboutMe({ pageInfoo }) {
           delay={1.25}
           useAnimate={false}
           className="right-[285px] uppercase absolute text-[#1d3557] text-2xl"
-          children="&#123;/*"
-        />
+        >
+          &#123;/*
+        </MotionDiv>
         <MotionDiv
           x={25}
           duration={1.2}
           delay={1.25}
           useAnimate={false}
           className="left-[265px] uppercase absolute text-[#1d3557] text-2xl"
-          children="*/&#125;"
-        />
+        >
+          */&#125;
+        </MotionDiv>
       </div>
 
       <div className="flex flex-col md:flex-row relative -bottom-[55px] md:bottom-[50px] items-center ">
