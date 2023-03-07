@@ -8,6 +8,7 @@ export default function MotionDiv({
   duration,
   delay,
   className,
+  children,
 }) {
   const animationProps = useAnimate
     ? { animate: { x: 0, opacity: 1 } }
@@ -25,6 +26,8 @@ export default function MotionDiv({
       }}
       {...animationProps}
       className={className}
-    />
+    >
+      {children}
+    </motion.div>
   );
 }
