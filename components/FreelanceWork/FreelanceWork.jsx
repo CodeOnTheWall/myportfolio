@@ -1,6 +1,6 @@
-"use client";
+import MotionTitle from "../Motion/MotionTitle";
+import MotionDiv from "../Motion/MotionDiv";
 
-import { motion } from "framer-motion";
 import FreelanceWorkCard from "./FreelanceWorkCard";
 
 export default function FreelanceWork({ freelances }) {
@@ -9,71 +9,26 @@ export default function FreelanceWork({ freelances }) {
       className=" h-screen relative flex flex-col overflow-hidden text-left mx-auto 
     items-center md:flex-row max-w-full z-0 justify-evenly"
     >
-      <div className="absolute top-[80px] flex">
-        <motion.h3
-          initial={{
-            y: -25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className="uppercase tracking-[20px] text-[#8ecae6] text-2xl"
-        >
-          Freelance
-        </motion.h3>
-        <motion.h3
-          initial={{
-            y: 25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" ml-3 uppercase tracking-[20px] text-[#8ecae6] text-2xl"
-          //
-        >
-          Work
-        </motion.h3>
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 25,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-[480px] w-[2px] h-[32px] bg-[#1d3557]"
+      <div className="absolute flex top-[10px] md:top-[25px]">
+        <MotionTitle y={-25} duration={1.2} title="Freelance" />
+        <MotionTitle y={25} duration={1.2} title="Work" className="ml-3" />
+
+        {/* coding effect /> */}
+        <MotionDiv
+          x={-25}
+          duration={1.2}
+          delay={1.25}
+          useAnimate={false}
+          className="-left-[30px] uppercase absolute  text-[#1d3557] text-2xl"
+          children="&lt;"
         />
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -25,
-            y: -25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-0 w-[2px] h-[32px] bg-[#1d3557]"
+        <MotionDiv
+          x={25}
+          duration={1.2}
+          delay={1.25}
+          useAnimate={false}
+          className="-right-[25px] uppercase absolute  text-[#1d3557] text-2xl"
+          children="/&gt;"
         />
       </div>
 

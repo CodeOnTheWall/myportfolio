@@ -9,7 +9,7 @@ export default function Skills({ skills }) {
       className=" h-screen flex flex-col relative mx-auto text-center md:text-left xl:flex-row
     max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 items-center"
     >
-      <div className="absolute top-[80px] flex">
+      <div className="absolute flex top-[10px] md:top-[25px] ">
         <motion.h3
           initial={{
             opacity: 0,
@@ -119,7 +119,7 @@ export default function Skills({ skills }) {
           S
         </motion.h3>
 
-        {/* coding effect */}
+        {/* coding effect /> */}
         <motion.div
           initial={{
             opacity: 0,

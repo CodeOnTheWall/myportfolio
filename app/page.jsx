@@ -50,7 +50,7 @@ const skillsQuery = groq`
 }`;
 
 import Hero from "@/components/Hero/Hero";
-import About from "@/components/About/About";
+import AboutMe from "@/components/AboutMe/AboutMe";
 import FreelanceWork from "@/components/FreelanceWork/FreelanceWork";
 import PracticeProjects from "@/components/PracticeProjects/PracticeProjects";
 import Skills from "@/components/Skills/Skills";
@@ -88,7 +88,7 @@ export default async function Home() {
 
       {/* About*/}
       <section id="about" className="snap-start">
-        <About pageInfoo={pageInfoo} />
+        <AboutMe pageInfoo={pageInfoo} />
       </section>
 
       {/* Work Experience */}

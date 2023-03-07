@@ -23,7 +23,7 @@ export default function Header() {
             scale: 1,
           }}
           transition={{ duration: 1.5 }}
-          className="hover:headerButton border-2 border-[#1d3557] rounded-full"
+          className="hover:mainPageHoverButton border-2 border-[#1d3557] rounded-full"
         >
           <SocialIcon
             url="https://www.linkedin.com/in/bralen-sundquist-3a3a53246/"
@@ -44,7 +44,7 @@ export default function Header() {
             scale: 1,
           }}
           transition={{ duration: 1.5 }}
-          className="hover:headerButton border-2 border-[#1d3557] rounded-full"
+          className="hover:mainPageHoverButton border-2 border-[#1d3557] rounded-full"
         >
           <SocialIcon
             url="https://github.com/CodeOnTheWall/"
@@ -69,7 +69,7 @@ export default function Header() {
             scale: 1,
           }}
           transition={{ duration: 1.5 }}
-          className=" text-gray-300 cursor-pointer hover:headerButton border-2 border-[#1d3557] rounded-full"
+          className=" text-gray-300 cursor-pointer hover:mainPageHoverButton border-2 border-[#1d3557] rounded-full"
         >
           <SocialIcon
             className=" cursor-pointer"

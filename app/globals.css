@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-  .heroButton {
+  .mainPageButton {
     @apply border-2 px-3 border-[#1d3557] bg-[#8ecae6] rounded-full uppercase tracking-widest;
   }
-  .headerButton {
-    @apply border-2 border-[#f1faee] rounded-full uppercase tracking-widest border-x-[#1d3557];
+  .mainPageHoverButton {
+    @apply border-2 border-[#f1faee] border-x-[#1d3557];
   }
   .contactInput {
     @apply outline-none bg-[#e5e5e5] rounded-sm border-b px-6 py-4 border-[#242424]

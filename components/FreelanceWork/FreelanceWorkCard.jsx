@@ -12,8 +12,8 @@ import { motion } from "framer-motion";
 export default function FreelanceWorkCard({ freelance }) {
   return (
     <article
-      className=" flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px]
-     snap-center bg-[#8ecae6]/40 p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
+      className="relative rounded-lg w-[400px] h-[650px] md:h-[700px] md:w-[700px] flex-shrink-0
+      snap-center bg-[#8ecae6]/40 pt-14 md:p-10 md:hover:opacity-100 md:opacity-40 md:transition-opacity md:duration-200 overflow-hidden"
     >
       <motion.img
         initial={{
