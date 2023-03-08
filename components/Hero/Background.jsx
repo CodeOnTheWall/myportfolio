@@ -18,9 +18,9 @@ export default function Background() {
       transition={{
         duration: 2.5,
       }}
-      className=" relative top-[350px] md:top-[400px] flex justify-center items-center"
+      className=" relative top-[325px] md:top-[400px] flex justify-center items-center"
     >
-      <div className=" absolute border border-[#8ecae6] h-[650px] w-[350px] md:h-[450px] md:w-[700px] opacity-20 animate-pulse " />
+      <div className=" absolute border border-[#8ecae6] h-[600px] w-[350px] md:h-[450px] md:w-[700px] opacity-20 animate-pulse " />
       <div className=" absolute border border-[#8ecae6] md:h-[550px] md:w-[850px] opacity-20 animate-pulse" />
       <div className=" absolute border border-[#8ecae6] md:h-[700px] md:w-[1000px] " />
     </motion.div>

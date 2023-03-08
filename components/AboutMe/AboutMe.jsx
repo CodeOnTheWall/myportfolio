@@ -5,30 +5,34 @@ import MotionImg from "../Motion/MotionImg";
 export default function AboutMe({ pageInfoo }) {
   return (
     <div className=" h-screen relative max-w-7xl mx-auto flex flex-col md:flex-row md:justify-center items-center text-center md:text-left">
+      {/* TITLE */}
       <div className="absolute flex top-[10px] md:top-[25px] ">
-        <MotionTitle y={-25} duration={1.2} title="About" />
-        <MotionTitle y={25} duration={1.2} title="Me" className="ml-3" />
-
-        {/* coding effect */}
         <MotionDiv
           x={-25}
           duration={1.2}
-          delay={1.25}
+          delay={1.15}
           useAnimate={false}
-          className="right-[285px] uppercase absolute text-[#1d3557] text-2xl"
+          className=" uppercase text-[#1d3557] text-2xl mr-[15px]"
         >
           &#123;/*
         </MotionDiv>
+        <MotionTitle y={-25} duration={1.2}>
+          About
+        </MotionTitle>
+        <MotionTitle y={25} duration={1.2} className="ml-3 truncate">
+          Me
+        </MotionTitle>
         <MotionDiv
           x={25}
           duration={1.2}
-          delay={1.25}
+          delay={1.15}
           useAnimate={false}
-          className="left-[265px] uppercase absolute text-[#1d3557] text-2xl"
+          className="uppercase text-[#1d3557] text-2xl"
         >
           */&#125;
         </MotionDiv>
       </div>
+      {/* END TITLE */}
 
       <div className="flex flex-col md:flex-row relative -bottom-[55px] md:bottom-[50px] items-center ">
         <MotionImg

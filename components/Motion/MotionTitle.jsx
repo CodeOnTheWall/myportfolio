@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 
-export default function MotionTitle({ y, duration, delay, className, title }) {
+export default function MotionTitle({
+  y,
+  duration,
+  delay,
+  className,
+  children,
+}) {
   const defaultStyles = "uppercase tracking-[20px] text-[#8ecae6] text-2xl";
   const classes = `${defaultStyles} ${className}`;
 
@@ -22,7 +28,7 @@ export default function MotionTitle({ y, duration, delay, className, title }) {
       }}
       className={classes}
     >
-      {title}
+      {children}
     </motion.h3>
   );
 }

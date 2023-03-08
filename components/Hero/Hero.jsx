@@ -15,7 +15,7 @@ export default function Hero({ pageInfoo }) {
     <>
       <Background />
       <div className=" h-screen flex flex-col md:justify-center text-center">
-        <div className="relative -bottom-14 md:bottom-[60px] ">
+        <div className="relative -bottom-[45px] md:bottom-[60px] ">
           <div className="flex flex-col md:flex-row md:space-x-10 justify-center items-center">
             <MotionDiv x={-25} duration={2} delay={1.75} useAnimate={true}>
               <Image

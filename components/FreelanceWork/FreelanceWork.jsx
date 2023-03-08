@@ -6,37 +6,51 @@ import FreelanceWorkCard from "./FreelanceWorkCard";
 export default function FreelanceWork({ freelances }) {
   return (
     <div
-      className=" h-screen relative flex flex-col overflow-hidden text-left mx-auto 
-    items-center md:flex-row max-w-full z-0 justify-evenly"
+      // the issue is here
+      className=" h-screen relative mx-auto flex justify-center overflow-hidden text-left 
+     max-w-7xl"
     >
+      {/* TITLE */}
       <div className="absolute flex top-[10px] md:top-[25px]">
-        <MotionTitle y={-25} duration={1.2} title="Freelance" />
-        <MotionTitle y={25} duration={1.2} title="Work" className="ml-3" />
-
-        {/* coding effect /> */}
         <MotionDiv
           x={-25}
           duration={1.2}
-          delay={1.25}
+          delay={1.15}
           useAnimate={false}
-          className="-left-[30px] uppercase absolute  text-[#1d3557] text-2xl"
+          className="hidden md:block uppercase text-[#1d3557] text-2xl mr-[15px]"
         >
           &lt;
         </MotionDiv>
+        <MotionTitle
+          y={-25}
+          duration={1.2}
+          className=" text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
+        >
+          Freelance
+        </MotionTitle>
+        <MotionTitle
+          y={25}
+          duration={1.2}
+          className="ml-3 text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
+        >
+          Work
+        </MotionTitle>
         <MotionDiv
           x={25}
           duration={1.2}
-          delay={1.25}
+          delay={1.15}
           useAnimate={false}
-          className="-right-[25px] uppercase absolute  text-[#1d3557] text-2xl"
+          className="hidden md:block uppercase text-[#1d3557] text-2xl"
         >
           /&gt;
         </MotionDiv>
       </div>
+      {/* END TITLE */}
 
       <div
         className=" w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
-       scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50"
+       scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50
+      relative top-[100px] "
       >
         {freelances?.map((freelance) => (
           <FreelanceWorkCard key={freelance._id} freelance={freelance} />
