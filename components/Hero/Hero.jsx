@@ -30,7 +30,7 @@ export default function Hero({ pageInfoo }) {
             </MotionDiv>
 
             <div className="flex flex-col space-y-4 mt-8 md:mt-0">
-              <MotionButton href="#about" y={100} title="About" />
+              <MotionButton href="#about" y={100} title="About Me" />
               <MotionButton href="#freelance" y={50} title="Freelance Work" />
               <MotionButton href="#projects" y={0} title="Practice Projects" />
               <MotionButton href="#skills" y={-50} title="Skills" />

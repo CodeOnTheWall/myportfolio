@@ -1,5 +1,8 @@
 "use client";
 
+import MotionTitle from "../Motion/MotionTitle";
+import MotionDiv from "../Motion/MotionDiv";
+
 import { useForm } from "react-hook-form";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
@@ -12,106 +15,73 @@ export default function ContactMe() {
   };
 
   return (
-    <div
-      className=" h-screen relative flex flex-col overflow-hidden text-center md:text-left 
-      mx-auto items-center md:flex-row px-10 max-w-7xl justify-evenly"
-    >
-      <div className="absolute top-[150px] flex">
-        <motion.h3
-          initial={{
-            y: -25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className="uppercase tracking-[20px] text-[#8ecae6] text-2xl"
+    <div className=" h-screen flex relative mx-auto items-center max-w-[350px] md:max-w-[800px] lg:max-w-[924px] xl:max-w-[1500px] md:px-8 justify-center">
+      <div className="absolute flex top-[10px] md:top-[25px]">
+        <MotionDiv
+          x={25}
+          y={25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className="hidden md:block lowercase text-[#1d3557] text-2xl mr-[15px]"
+        >
+          git commit -m "
+        </MotionDiv>
+        <MotionTitle
+          y={-25}
+          duration={1.2}
+          className=" text-2xl md:tracking-[20px]"
         >
           Contact
-        </motion.h3>
-        <motion.h3
-          initial={{
-            y: 25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" ml-3 uppercase tracking-[20px] text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={25}
+          duration={1.2}
+          className=" text-2xl md:tracking-[20px] ml-3"
         >
           Me
-        </motion.h3>
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 25,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-[343px] w-[2px] h-[32px] bg-[#1d3557]"
-        />
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -25,
-            y: -25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-0 w-[2px] h-[32px] bg-[#1d3557]"
-        />
+        </MotionTitle>
+
+        <MotionDiv
+          x={-25}
+          y={-25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className="hidden md:block lowercase text-[#1d3557] text-2xl"
+        >
+          "
+        </MotionDiv>
       </div>
 
-      <div className=" flex flex-col space-y-10">
-        <h4 className=" text-4xl font-semibold text-center">
-          I have got just what you need.{" "}
-          <span className=" decoration-[#023e8a] underline">
+      <div className="relative -top-[100px] space-y-8 ">
+        <div className="flex flex-col md:flex-row">
+          <h4 className="text-2xl md:text-4xl font-semibold text-center">
+            I have got just what you need.{" "}
+          </h4>
+          <h4 className="text-2xl md:text-4xl ml-3 decoration-[#023e8a] underline font-semibold text-center">
             Let&apos;s Talk
-          </span>
-        </h4>
+          </h4>
+        </div>
 
-        <div className=" space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
+        {/* <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#a3b18a] h-7 w-7 animate-pulse" />
             <p>52 55 6487 7362</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#a3b18a] h-7 w-7 animate-pulse" />
-            <p>bralencsundquist@hotmail.com</p>
-          </div>
-          {/* <div className="flex items-center space-x-5">
+          </div> */}
+        <div className="flex items-center space-x-5 justify-center">
+          <EnvelopeIcon className="text-[#a3b18a] h-7 w-7 animate-pulse" />
+          <p>bralencsundquist@hotmail.com</p>
+        </div>
+        {/* <div className="flex items-center space-x-5">
             <MapPinIcon className="text-[#a3b18a] h-7 w-7 animate-pulse" />
             <p>52 55 6487 7362</p>
           </div> */}
-        </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className=" flex flex-col space-y-2 w-fit mx-auto"
+          className=" flex flex-col space-y-2 w-[300px] md:w-fit mx-auto "
         >
-          <div className=" flex space-x-2">
+          <div className=" flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-2">
             <input
               {...register("name")}
               placeholder="Name"

@@ -75,7 +75,7 @@ export default function Skills({ skills }) {
         </MotionDiv>
       </div>
 
-      <div className="relative flex flex-col items-center -top-[125px] md:-top-[50px] w-full ">
+      <div className="relative flex flex-col items-center -top-[125px] md:-top-[75px] w-full ">
         <h3 className=" uppercase tracking-[3px] text-[#8ecae6] text-sm">
           Current Tech Stack Proficiencies
         </h3>
