@@ -25,7 +25,7 @@ export default function ContactMe() {
           useAnimate={false}
           className="hidden md:block lowercase text-[#1d3557] text-2xl mr-[15px]"
         >
-          git commit -m "
+          git commit -m &quot;
         </MotionDiv>
         <MotionTitle
           y={-25}
@@ -50,7 +50,7 @@ export default function ContactMe() {
           useAnimate={false}
           className="hidden md:block lowercase text-[#1d3557] text-2xl"
         >
-          "
+          &quot;
         </MotionDiv>
       </div>
 
