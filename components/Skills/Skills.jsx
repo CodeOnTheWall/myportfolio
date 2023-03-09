@@ -1,183 +1,94 @@
-"use client";
+import MotionTitle from "../Motion/MotionTitle";
+import MotionDiv from "../Motion/MotionDiv";
 
 import Skill from "./Skill";
 import { motion } from "framer-motion";
 
 export default function Skills({ skills }) {
   return (
-    <div
-      className=" h-screen flex flex-col relative mx-auto text-center md:text-left xl:flex-row
-    max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 items-center"
-    >
-      <div className="absolute flex top-[10px] md:top-[25px] ">
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -35,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" ml-3 uppercase ] text-[#8ecae6] text-2xl"
-          //
+    <div className=" h-screen flex relative mx-auto items-center max-w-[350px] md:max-w-[800px] lg:max-w-[924px] xl:max-w-[1500px] md:px-8 justify-center">
+      <div className="absolute flex top-[10px] md:top-[25px]">
+        <MotionDiv
+          x={-25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className=" text-[#1d3557] text-2xl mr-[15px]"
+        >
+          .map{"("}
+        </MotionDiv>
+        <MotionTitle
+          y={-35}
+          duration={1.2}
+          className=" text-[23px]  md:text-2xl "
         >
           S
-        </motion.h3>
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 0.25,
-          }}
-          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={-30}
+          duration={1.2}
+          delay={0.25}
+          className=" text-[23px]  md:text-2xl "
         >
           K
-        </motion.h3>
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 0.5,
-          }}
-          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={-25}
+          duration={1.2}
+          delay={0.5}
+          className=" text-[23px]  md:text-2xl "
         >
           I
-        </motion.h3>
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -20,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 0.75,
-          }}
-          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={-20}
+          duration={1.2}
+          delay={0.75}
+          className=" text-[23px]  md:text-2xl "
         >
           L
-        </motion.h3>
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -15,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 1,
-          }}
-          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={-15}
+          duration={1.2}
+          delay={1}
+          className=" text-[23px]  md:text-2xl "
         >
           L
-        </motion.h3>
-        <motion.h3
-          initial={{
-            opacity: 0,
-            y: -10,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 1.25,
-          }}
-          className=" ml-3 uppercase  text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={-10}
+          duration={1.2}
+          delay={1.25}
+          className=" text-[23px]  md:text-2xl "
         >
           S
-        </motion.h3>
-
-        {/* coding effect /> */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 1.35,
-          }}
-          className=" right-[145px] uppercase absolute  text-[#1d3557] text-2xl"
-          //
+        </MotionTitle>
+        <MotionDiv
+          x={-25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className="  text-[#1d3557] text-2xl mr-[15px]"
         >
-          &lt;
-        </motion.div>
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 1.35,
-          }}
-          className=" left-[155px] uppercase absolute  text-[#1d3557] text-2xl"
-          //
-        >
-          /&gt;
-        </motion.div>
+          {")"} =&gt; {"("}
+        </MotionDiv>
       </div>
 
-      <h3 className=" absolute top-[130px] uppercase tracking-[3px] text-[#8ecae6] text-sm">
-        Current Tech Stack Proficiencies
-      </h3>
-
-      <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        whileInView={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 1.2,
-        }}
-        className="grid grid-cols-4 gap-5"
-      >
-        {skills.map((skill) => (
-          <Skill key={skill._id} skill={skill} />
-        ))}
-      </motion.div>
+      <div className="relative flex flex-col items-center -top-[125px] md:-top-[50px] w-full ">
+        <h3 className=" uppercase tracking-[3px] text-[#8ecae6] text-sm">
+          Current Tech Stack Proficiencies
+        </h3>
+        <MotionDiv
+          duration={1.2}
+          useAnimate={false}
+          className="grid grid-cols-4 md:gap-5 mt-8 md:mt-4"
+        >
+          {skills.map((skill) => (
+            <Skill key={skill._id} skill={skill} />
+          ))}
+        </MotionDiv>
+      </div>
     </div>
   );
 }

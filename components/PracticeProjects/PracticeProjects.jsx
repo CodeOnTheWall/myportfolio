@@ -1,85 +1,49 @@
-"use client";
+import MotionTitle from "../Motion/MotionTitle";
+import MotionDiv from "../Motion/MotionDiv";
 
-import { motion } from "framer-motion";
 import PracticeCard from "./PracticeCard";
 
 export default function PracticeProjects({ projects }) {
   return (
-    <div
-      className=" h-screen relative flex flex-col overflow-hidden text-left md:flex-row
-    max-w-full justify-evenly mx-auto items-center z-0"
-    >
-      <div className="absolute top-[80px] flex">
-        <motion.h3
-          initial={{
-            y: -25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className="uppercase tracking-[20px] text-[#8ecae6] text-2xl"
+    <div className=" h-screen flex relative mx-auto items-center max-w-[350px] md:max-w-[800px] lg:max-w-[924px] xl:max-w-[1500px] md:px-8 justify-center">
+      <div className="absolute flex top-[10px] md:top-[25px]">
+        <MotionDiv
+          x={-25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className="hidden md:block uppercase text-[#1d3557] text-2xl mr-[15px]"
+        >
+          return{"("}
+        </MotionDiv>
+        <MotionTitle
+          y={-25}
+          duration={1.2}
+          className=" text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
         >
           Practice
-        </motion.h3>
-        <motion.h3
-          initial={{
-            y: 25,
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" ml-3 uppercase tracking-[20px] text-[#8ecae6] text-2xl"
-          //
+        </MotionTitle>
+        <MotionTitle
+          y={25}
+          duration={1.2}
+          className="ml-3 text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
         >
           Projects
-        </motion.h3>
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: 25,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-[560px] w-[2px] h-[32px] bg-[#1d3557]"
-        />
-        <motion.div
-          initial={{
-            opacity: 0,
-            x: -25,
-            y: -25,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className=" absolute right-0 w-[2px] h-[32px] bg-[#1d3557]"
-        />
+        </MotionTitle>
+        <MotionDiv
+          x={25}
+          duration={1.2}
+          delay={1.15}
+          useAnimate={false}
+          className="hidden md:block uppercase text-[#1d3557] text-2xl"
+        >
+          {")"}
+        </MotionDiv>
       </div>
 
       <div
-        className=" w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
-      scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50 "
+        className="relative -top-[100px] md:-top-[50px] w-full flex overflow-x-scroll snap-x snap-mandatory
+        scrollbar scrollbar-track-[#e5e5e5] scrollbar-thumb-[#588157]/50"
       >
         {projects?.map((project) => (
           <PracticeCard key={project._id} project={project} />

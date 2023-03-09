@@ -3,13 +3,15 @@ import MotionDiv from "../Motion/MotionDiv";
 
 import FreelanceWorkCard from "./FreelanceWorkCard";
 
+// sm: Small screens (min-width: 640px)
+// md: Medium screens (min-width: 768px)
+// lg: Large screens (min-width: 1024px)
+// xl: Extra-large screens (min-width: 1280px)
+// 2xl: 2X extra-large screens (min-width: 1536px)
+
 export default function FreelanceWork({ freelances }) {
   return (
-    <div
-      // the issue is here
-      className=" h-screen relative mx-auto flex justify-center overflow-hidden text-left 
-     max-w-7xl"
-    >
+    <div className=" h-screen flex relative mx-auto items-center max-w-[350px] md:max-w-[800px] lg:max-w-[924px] xl:max-w-[1500px] md:px-8 justify-center">
       {/* TITLE */}
       <div className="absolute flex top-[10px] md:top-[25px]">
         <MotionDiv
@@ -48,11 +50,10 @@ export default function FreelanceWork({ freelances }) {
       {/* END TITLE */}
 
       <div
-        className=" w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
-       scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#023e8a]/50
-      relative top-[100px] "
+        className="relative -top-[100px] w-full flex overflow-x-scroll snap-x snap-mandatory
+        scrollbar scrollbar-track-[#e5e5e5] scrollbar-thumb-[#588157]/50"
       >
-        {freelances?.map((freelance) => (
+        {freelances.map((freelance) => (
           <FreelanceWorkCard key={freelance._id} freelance={freelance} />
         ))}
       </div>
