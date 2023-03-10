@@ -16,10 +16,10 @@ export default function AboutMe({ pageInfoo }) {
         >
           &#123;/*
         </MotionDiv>
-        <MotionTitle y={-25} duration={1.2}>
+        <MotionTitle y={-25} duration={1.2} className="tracking-[20px]">
           About
         </MotionTitle>
-        <MotionTitle y={25} duration={1.2} className="ml-3 truncate">
+        <MotionTitle y={25} duration={1.2} className="ml-3 tracking-[20px]">
           Me
         </MotionTitle>
         <MotionDiv

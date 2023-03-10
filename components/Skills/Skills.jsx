@@ -20,7 +20,7 @@ export default function Skills({ skills }) {
         <MotionTitle
           y={-35}
           duration={1.2}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           S
         </MotionTitle>
@@ -28,7 +28,7 @@ export default function Skills({ skills }) {
           y={-30}
           duration={1.2}
           delay={0.25}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           K
         </MotionTitle>
@@ -36,7 +36,7 @@ export default function Skills({ skills }) {
           y={-25}
           duration={1.2}
           delay={0.5}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           I
         </MotionTitle>
@@ -44,7 +44,7 @@ export default function Skills({ skills }) {
           y={-20}
           duration={1.2}
           delay={0.75}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           L
         </MotionTitle>
@@ -52,7 +52,7 @@ export default function Skills({ skills }) {
           y={-15}
           duration={1.2}
           delay={1}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           L
         </MotionTitle>
@@ -60,7 +60,7 @@ export default function Skills({ skills }) {
           y={-10}
           duration={1.2}
           delay={1.25}
-          className=" text-[23px]  md:text-2xl "
+          className=" tracking-[20px]  md:text-2xl "
         >
           S
         </MotionTitle>

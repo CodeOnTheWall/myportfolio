@@ -27,18 +27,10 @@ export default function ContactMe() {
         >
           git commit -m &quot;
         </MotionDiv>
-        <MotionTitle
-          y={-25}
-          duration={1.2}
-          className=" text-2xl md:tracking-[20px]"
-        >
+        <MotionTitle y={-25} duration={1.2} className="  tracking-[20px]">
           Contact
         </MotionTitle>
-        <MotionTitle
-          y={25}
-          duration={1.2}
-          className=" text-2xl md:tracking-[20px] ml-3"
-        >
+        <MotionTitle y={25} duration={1.2} className="  tracking-[20px] ml-3">
           Me
         </MotionTitle>
 

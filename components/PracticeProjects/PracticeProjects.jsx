@@ -16,18 +16,10 @@ export default function PracticeProjects({ projects }) {
         >
           return{"("}
         </MotionDiv>
-        <MotionTitle
-          y={-25}
-          duration={1.2}
-          className=" text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
-        >
+        <MotionTitle y={-25} duration={1.2} className="  md:text-2xl ">
           Practice
         </MotionTitle>
-        <MotionTitle
-          y={25}
-          duration={1.2}
-          className="ml-3 text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
-        >
+        <MotionTitle y={25} duration={1.2} className="ml-3  md:text-2xl ">
           Projects
         </MotionTitle>
         <MotionDiv
