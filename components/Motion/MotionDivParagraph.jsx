@@ -2,16 +2,15 @@
 
 import { motion } from "framer-motion";
 
-export default function MotionDiv({
+export default function MotionDivParagraph({
   y,
-  x = -25,
+  x,
   useAnimate = false,
   duration = 1.2,
-  delay = 1.15,
+  delay = 0,
   className,
   children,
 }) {
-  const defaultClasses = "uppercase text-[#1d3557] text-2xl";
   const animationProps = useAnimate
     ? { animate: { x: 0, y: 0, opacity: 1 } }
     : { whileInView: { x: 0, y: 0, opacity: 1 } };
@@ -28,7 +27,7 @@ export default function MotionDiv({
         delay: delay,
       }}
       {...animationProps}
-      className={`${defaultClasses} ${className}`}
+      className={className}
     >
       {children}
     </motion.div>

@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 
 export default function MotionTitle({
-  y,
-  duration,
+  y = -25,
+  duration = 1.25,
   delay,
   className,
   children,

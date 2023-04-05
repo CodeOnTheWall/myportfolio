@@ -26,12 +26,6 @@ export const revalidate = 30; // revalidate this page every 30 seconds
 import { groq } from "next-sanity";
 import { client } from "../lib/sanity.client";
 
-const pageInfoQuery = groq`
-*[_type == "pageInfo"]{
- ...,
-  socials[]->
-} | order(_updatedAt desc)`;
-
 const freelanceQuery = groq`
 *[_type == "experience"]{
  ...,
@@ -61,12 +55,6 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const pageInfo = await client.fetch(pageInfoQuery);
-  // const pageInfo = await client.fetch(pageInfoQuery, {
-  //   next: { revalidate: 10 },
-  // });
-  const pageInfoo = pageInfo[0];
-
   const freelances = await client.fetch(freelanceQuery);
 
   const skills = await client.fetch(skillsQuery);
@@ -75,39 +63,39 @@ export default async function Home() {
 
   return (
     <div
-      className="h-[700px] md:h-[800px] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden
-    scrollbar scrollbar-track-[#e5e5e5] scrollbar-thumb-[#588157]/50"
+      className="h-screen overflow-y-scroll overflow-x-hidden
+    md:scrollbar scrollbar-track-[#e5e5e5] scrollbar-thumb-[#588157]/50"
     >
       {/* Header in Layout */}
       {/* Header */}
 
       {/* Hero */}
-      <section id="hero" className="snap-start">
-        <Hero pageInfoo={pageInfoo} />
+      <section id="hero">
+        <Hero />
       </section>
 
       {/* About*/}
-      <section id="about" className="snap-start">
-        <AboutMe pageInfoo={pageInfoo} />
+      <section id="about">
+        <AboutMe />
       </section>
 
       {/* Work Experience */}
-      <section id="freelance" className="snap-start">
+      <section id="freelance">
         <FreelanceWork freelances={freelances} />
       </section>
 
       {/* Practice Projects */}
-      <section id="projects" className="snap-start">
+      <section id="projects">
         <PracticeProjects projects={projects} />
       </section>
 
       {/* Skills */}
-      <section id="skills" className="snap-start">
+      <section id="skills">
         <Skills skills={skills} />
       </section>
 
       {/* Contact Me */}
-      <section id="contact" className="snap-start">
+      <section id="contact">
         <ContactMe />
       </section>
     </div>

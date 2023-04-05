@@ -4,13 +4,26 @@
 
 import MotionButton from "../Motion/MotionButton";
 import MotionDiv from "../Motion/MotionDiv";
+import MotionDivParagraph from "../Motion/MotionDivParagraph";
 import Background from "./Background";
 import TypeWriter from "./TypeWriter";
 
 import urlFor from "@/lib/urlFor";
 import Image from "next/image";
 
-export default function Hero({ pageInfoo }) {
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+
+const pageInfoQuery = groq`
+*[_type == "pageInfo"]{
+ ...,
+  socials[]->
+} | order(_updatedAt desc)`;
+
+export default async function Hero() {
+  const pageInfo = await client.fetch(pageInfoQuery);
+  const pageInfoo = pageInfo[0];
+
   return (
     <>
       <Background />
@@ -38,12 +51,12 @@ export default function Hero({ pageInfoo }) {
             </div>
           </div>
 
-          <MotionDiv
+          <MotionDivParagraph
             x={-25}
             duration={2}
             delay={1.75}
             useAnimate={true}
-            className="relative space-y-2 mt-8 md:mt-5"
+            className="relative space-y-2 mt-8 md:mt-5 "
           >
             <h2
               className="uppercase underline decoration-[#1d3557] decoration-2 underline-offset-8 d text-[#8ecae6] md:tracking-[12px]
@@ -55,7 +68,7 @@ export default function Hero({ pageInfoo }) {
             <h2 className=" text-[#8ecae6] text-[18px]">
               <TypeWriter pageInfoo={pageInfoo} />
             </h2>
-          </MotionDiv>
+          </MotionDivParagraph>
         </div>
       </div>
     </>

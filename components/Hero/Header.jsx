@@ -8,8 +8,8 @@ export default function Header() {
     window.location.hash = "contact";
   };
   return (
-    <header className="sticky p-5 flex items-start justify-between max-w-7xl mx-auto">
-      <div className="flex space-x-5">
+    <header className="sticky p-5 flex items-start justify-between">
+      <div className="flex space-x-5 md:ml-10">
         <motion.div
           initial={{
             x: -500,
@@ -55,7 +55,7 @@ export default function Header() {
       </div>
 
       {/* other side of header */}
-      <div className="flex md:space-x-5">
+      <div className="flex md:space-x-5 md:mr-10">
         <motion.div
           initial={{
             x: 500,

@@ -1,36 +1,31 @@
-import MotionTitle from "../Motion/MotionTitle";
 import MotionDiv from "../Motion/MotionDiv";
 import MotionImg from "../Motion/MotionImg";
+import MotionTitle from "../Motion/MotionTitle";
+import MotionDivParagraph from "../Motion/MotionDivParagraph";
 
-export default function AboutMe({ pageInfoo }) {
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+
+const pageInfoQuery = groq`
+*[_type == "pageInfo"]{
+ ...,
+  socials[]->
+} | order(_updatedAt desc)`;
+
+export default async function AboutMe() {
+  const pageInfo = await client.fetch(pageInfoQuery);
+  const pageInfoo = pageInfo[0];
+
   return (
     <div className=" h-screen relative max-w-7xl mx-auto flex flex-col md:flex-row md:justify-center items-center text-center md:text-left">
       {/* TITLE */}
       <div className="absolute flex top-[10px] md:top-[25px] ">
-        <MotionDiv
-          x={-25}
-          duration={1.2}
-          delay={1.15}
-          useAnimate={false}
-          className=" uppercase text-[#1d3557] text-2xl mr-[15px]"
-        >
-          &#123;/*
-        </MotionDiv>
-        <MotionTitle y={-25} duration={1.2} className="tracking-[20px]">
-          About
-        </MotionTitle>
-        <MotionTitle y={25} duration={1.2} className="ml-3 tracking-[20px]">
+        <MotionDiv className="mr-[15px]">&#123;/*</MotionDiv>
+        <MotionTitle className="tracking-[20px]">About</MotionTitle>
+        <MotionTitle y={25} className="ml-3 tracking-[20px]">
           Me
         </MotionTitle>
-        <MotionDiv
-          x={25}
-          duration={1.2}
-          delay={1.15}
-          useAnimate={false}
-          className="uppercase text-[#1d3557] text-2xl"
-        >
-          */&#125;
-        </MotionDiv>
+        <MotionDiv x={25}>*/&#125;</MotionDiv>
       </div>
       {/* END TITLE */}
 
@@ -38,15 +33,12 @@ export default function AboutMe({ pageInfoo }) {
         <MotionImg
           x={-200}
           duration={1.2}
-          className=" w-[150px] h-[150px] md:w-[250px] md:h-[350px] xl:w-[350px] xl:h-[450px] rounded-full md:rounded-lg object-cover"
+          className=" w-1/3 rounded-full md:rounded-lg object-cover"
           url={pageInfoo.profilePic}
         />
-        <MotionDiv
+        <MotionDivParagraph
           x={200}
-          duration={1.2}
-          delay={0}
           className=" space-y-5 md:space-y-10 px-10 md:px-10 mt-3 md:mt-0"
-          useAnimate={false}
         >
           <h4 className=" text-2xl md:text-3xl font-semibold">
             Here is a{" "}
@@ -59,7 +51,7 @@ export default function AboutMe({ pageInfoo }) {
           >
             {pageInfoo.backgroundInformation}
           </p>
-        </MotionDiv>
+        </MotionDivParagraph>
       </div>
     </div>
   );

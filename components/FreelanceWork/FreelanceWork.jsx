@@ -11,39 +11,17 @@ import FreelanceWorkCard from "./FreelanceWorkCard";
 
 export default function FreelanceWork({ freelances }) {
   return (
-    <div className=" h-screen flex relative mx-auto items-center max-w-[350px] md:max-w-[800px] lg:max-w-[924px] xl:max-w-[1500px] md:px-8 justify-center">
+    <div className=" h-screen flex relative mx-auto items-center max-w-4/5 px-8 justify-center">
       {/* TITLE */}
       <div className="absolute flex top-[10px] md:top-[25px]">
-        <MotionDiv
-          x={-25}
-          duration={1.2}
-          delay={1.15}
-          useAnimate={false}
-          className="hidden md:block uppercase text-[#1d3557] text-2xl mr-[15px]"
-        >
-          &lt;
-        </MotionDiv>
-        <MotionTitle
-          y={-25}
-          duration={1.2}
-          className=" text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
-        >
+        <MotionDiv className="hidden md:block mr-[15px]">&lt;</MotionDiv>
+        <MotionTitle className=" text-[23px] tracking-[3px] ">
           Freelance
         </MotionTitle>
-        <MotionTitle
-          y={25}
-          duration={1.2}
-          className="ml-3 text-[23px] tracking-[3px] md:text-2xl md:tracking-[20px]"
-        >
+        <MotionTitle y={25} className="ml-3 text-[23px] tracking-[3px] ">
           Work
         </MotionTitle>
-        <MotionDiv
-          x={25}
-          duration={1.2}
-          delay={1.15}
-          useAnimate={false}
-          className="hidden md:block uppercase text-[#1d3557] text-2xl"
-        >
+        <MotionDiv x={25} duration={1.2} className="hidden md:block ">
           /&gt;
         </MotionDiv>
       </div>
